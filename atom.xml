@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-01-31T12:30:02.252Z</updated>
+  <updated>2019-02-25T00:29:31.484Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL常用指令</title>
+    <link href="http://yoursite.com/2019/02/25/SQL/"/>
+    <id>http://yoursite.com/2019/02/25/SQL/</id>
+    <published>2019-02-25T00:23:49.000Z</published>
+    <updated>2019-02-25T00:29:31.484Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="SQL常用指令记录"><a href="#SQL常用指令记录" class="headerlink" title="SQL常用指令记录"></a>SQL常用指令记录</h1><p>1.java代码获取数据库表里数据的总数</p><p>//先建立数据库连接,执行查询语句<br>Connection conn = DriverManager.getConnection(URL, USER, PassWord);<br>Statement st=conn.createStatement();<br>ResultSet rs =st.executeQuery(“select count(*) as result from staff”);<br>//staff 代表自己所有查询的表，根据个人的情况修改；<br>//创建变量存取个数<br>int count=0;<br>while(rs.next())<br>{<br>count=getInt(1);<br>}</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;SQL常用指令记录&quot;&gt;&lt;a href=&quot;#SQL常用指令记录&quot; class=&quot;headerlink&quot; title=&quot;SQL常用指令记录&quot;&gt;&lt;/a&gt;SQL常用指令记录&lt;/h1&gt;&lt;p&gt;1.java代码获取数据库表里数据的总数&lt;/p&gt;
+&lt;p&gt;//先建立数据库连接,执行查
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>博客格式</title>
