@@ -230,6 +230,96 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-AJAX" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/09/AJAX/" class="article-date">
+      <time datetime="2019-03-09T07:31:09.000Z" itemprop="datePublished">2019-03-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/09/AJAX/">AJAX</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>AJAX学习笔记</p>
+<h2 id="AJAX学习"><a href="#AJAX学习" class="headerlink" title="AJAX学习"></a>AJAX学习</h2><h3 id="1-AJAX技术开发步骤："><a href="#1-AJAX技术开发步骤：" class="headerlink" title="1.AJAX技术开发步骤："></a>1.AJAX技术开发步骤：</h3><pre><code>1.在浏览器内存中，创建一个【异步请求对象】
+2.为【异步请求对象】设置【工作状态监听器】，来帮助浏览器在
+  何时的时机从【异步请求对象】读取服务端返回的响应的数据。
+3.初始化【异步请求对象】，（请求方式（post/get），请求地址，同步或异步标识）
+4.命令（异步请求对象）发送请求。
+5.通过（工作状态监听器），在何时时机得到（工作状态监听器）返回的数据
+  对浏览器指定的标签内容进行更新，从而实现【局部刷新效果】
+</code></pre><h3 id="2-AJAX命令实现："><a href="#2-AJAX命令实现：" class="headerlink" title="2.AJAX命令实现："></a>2.AJAX命令实现：</h3><pre><code>1.        var xmlHttp  = new XMLHttpRequest();
+
+2.       xmlHttp.onreadystatechange = function(){
+
+                                     if(xmlHttp.readyState==4){
+                                           var  响应数据  = xmlHttp.responseText
+                                              dom对象.value= 响应数据;局部刷新
+                                                }
+                                           };
+
+3.xmlHttp.open(&quot;get&quot;,&quot;/myweb/one&quot;,true);
+4.xmlHttp.send();
+</code></pre><h3 id="3-AJAX中state和readyState的值的含义"><a href="#3-AJAX中state和readyState的值的含义" class="headerlink" title="3.AJAX中state和readyState的值的含义"></a>3.AJAX中state和readyState的值的含义</h3><pre><code>0：请求未初始化（还没有调用 open()）。
+
+1：请求已经建立，但是还没有发送（还没有调用 send()）。
+
+2：请求已发送，正在处理中（通常现在可以从响应中获取内容头）
+
+3：请求在处理中；通常响应中已有部分数据可用了，但是服务器还没有完成响应的生成。
+
+4：响应已完成；您可以获取并使用服务器的响应了。
+</code></pre><h3 id="4-readyState值的含义"><a href="#4-readyState值的含义" class="headerlink" title="4.readyState值的含义"></a>4.readyState值的含义</h3><pre><code>等于1：说明请求已经准备好可以发送
+
+等于2：服务器正在处理请求时会作出响应，响应首部提供了有关响应的信息，并提供一个状态码。
+
+等于3：数据下载到请求对象，但是响应数据还没有完全准备好，还不能使用
+
+等于4：服务器处理完请求，数据可以使用了
+</code></pre>
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
