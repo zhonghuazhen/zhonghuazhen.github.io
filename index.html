@@ -230,6 +230,63 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-AJAX例子" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/09/AJAX例子/" class="article-date">
+      <time datetime="2019-03-09T07:50:47.000Z" itemprop="datePublished">2019-03-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/09/AJAX例子/">AJAX例子</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="后台："><a href="#后台：" class="headerlink" title="后台："></a>后台：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">public class LogincheckServlet extends HttpServlet &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">		</span><br><span class="line">          String sname=null;</span><br><span class="line">          Connection conn=null;</span><br><span class="line">  		  Statement <span class="built_in">stat</span> =null;</span><br><span class="line">  	      PreparedStatement prep=null;</span><br><span class="line">  	      ResultSet rs=null;</span><br><span class="line">          String sql=<span class="string">"select count(*) from staff where sname =?"</span>;</span><br><span class="line">          int flag=0;</span><br><span class="line">		//1.读取由异步请求对象发送的参数</span><br><span class="line">		sname =req.getParameter(<span class="string">"sname"</span>);</span><br><span class="line">		</span><br><span class="line">		//2.JDBC，查询当前部门名称在数据库中是否已经存在；</span><br><span class="line">            try &#123;</span><br><span class="line">            	conn = DataAccess.getConnection();</span><br><span class="line">            	//需要自己写DataAccess类，然后在在类里面创建getConnection()方法；</span><br><span class="line">        		//执行sql语句</span><br><span class="line">        		prep=conn.prepareStatement(sql);</span><br><span class="line">        	    prep.setString(1, sname);</span><br><span class="line">        		rs=prep.executeQuery();</span><br><span class="line">        		//处理结果；</span><br><span class="line">        		rs.next();</span><br><span class="line">        		flag=rs.getInt(<span class="string">"count(*)"</span>);</span><br><span class="line">            	</span><br><span class="line">            &#125;catch(Exception ex)&#123;</span><br><span class="line">            	ex.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">		/*try &#123;</span><br><span class="line">			Thread.sleep(10000);//故意延长异步请求对象工作时间；</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;*/</span><br><span class="line">		//3.将判断结果发送给【异步请求对象】</span><br><span class="line">            resp.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">            PrintWriter out=resp.getWriter();</span><br><span class="line">           <span class="keyword">if</span> (flag&gt;=1) &#123;</span><br><span class="line">			out.print(<span class="string">"正确"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">        	   out.println(<span class="string">"用户不存在"</span>);</span><br><span class="line">           &#125;</span><br><span class="line">           // System.out.println(<span class="string">"判断结果 "</span>+flag);</span><br><span class="line">		//resp.getWriter().<span class="built_in">print</span>(flag);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 前台：</span></span><br><span class="line">``` bash</span><br><span class="line">&lt;label <span class="keyword">for</span>=<span class="string">"user"</span> class=<span class="string">"label"</span>&gt;Username&lt;/label&gt;</span><br><span class="line">&lt;input id=<span class="string">"user"</span> name=<span class="string">"username"</span> <span class="built_in">type</span>=<span class="string">"text"</span> onblur=<span class="string">"checkSta()"</span> class=<span class="string">"input"</span>&gt;</span><br><span class="line">&lt;font id=<span class="string">"myfont"</span> color=<span class="string">"red"</span>&gt;*&lt;/font&gt;</span><br><span class="line">&lt;!--通过onblur=<span class="string">"checkSta()"</span>调用JavaScript（当鼠标离开这个文本框并点击其它地方时触发）--&gt;</span><br><span class="line">&lt;!--myfont用于显示信息--&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="JavaScript方法："><a href="#JavaScript方法：" class="headerlink" title="JavaScript方法："></a>JavaScript方法：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"> <span class="keyword">function</span> checkSta()</span><br><span class="line"> &#123;</span><br><span class="line">	 /*</span><br><span class="line">	 //方法一：</span><br><span class="line">	 </span><br><span class="line">	   //1.创建一个异步请求对象</span><br><span class="line">	        var xmlHttp=new XMLHttpRequest();</span><br><span class="line">	   //2.设置异步请求对象工作状态监听</span><br><span class="line">	   xmlHttp.onreadystatechange=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		   <span class="keyword">if</span>(xmlHttp.readyState == 4)</span><br><span class="line">			   &#123;</span><br><span class="line">		   //从异步请求对象身上得到服务器端返回响应数据</span><br><span class="line">		   var data=xmlHttp.responseText;</span><br><span class="line">		  //局部刷新效果</span><br><span class="line">		  <span class="keyword">if</span>(data &gt;=1)</span><br><span class="line">			  &#123;</span><br><span class="line">			  document.getElementById(<span class="string">"myfont"</span>).innerText=<span class="string">"正确"</span>;	 </span><br><span class="line">			  &#125;</span><br><span class="line">		  <span class="keyword">else</span>&#123;</span><br><span class="line">		  document.getElementById(<span class="string">"myfont"</span>).innerText=<span class="string">"用户不存在"</span>;	</span><br><span class="line">		  &#125;</span><br><span class="line">			   &#125;</span><br><span class="line">		 &#125;;</span><br><span class="line">		 //3.初始化异步请求对象；</span><br><span class="line">		var param= document.getElementById(<span class="string">"user"</span>).value;</span><br><span class="line">		 //xmlHttp.open(<span class="string">"get"</span>,<span class="string">"logincheckServlet?sname="</span>+param,<span class="literal">false</span>);//同步；</span><br><span class="line">		 xmlHttp.open(<span class="string">"get"</span>,<span class="string">"logincheckServlet?sname="</span>+param,<span class="literal">true</span>);//异步</span><br><span class="line">		 //4.通知异步请求对象发送请求；</span><br><span class="line">		 xmlHttp.send();</span><br><span class="line">		 </span><br><span class="line">		 //5.浏览器执行的命令</span><br><span class="line">		 window.alert(<span class="string">"德玛西亚....."</span>);</span><br><span class="line">		 */</span><br><span class="line">		 </span><br><span class="line">		 //方法二：</span><br><span class="line">		 /*$.ajax(&#123;</span><br><span class="line">			 <span class="built_in">type</span>:<span class="string">"get"</span>,</span><br><span class="line">			 url:<span class="string">"logincheckServlet"</span>,</span><br><span class="line">			 data:&#123;sname:$(<span class="string">"#user"</span>).val()&#125;,</span><br><span class="line">			 dataType:<span class="string">"text"</span>,</span><br><span class="line">			 success:fun1,</span><br><span class="line">			error:fun2</span><br><span class="line">		 &#125;);</span><br><span class="line">		 </span><br><span class="line">		 //data就是从异步请求对象取得相应数据</span><br><span class="line">		 <span class="keyword">function</span> fun1(data)&#123;</span><br><span class="line">			 $(<span class="string">"#myfont"</span>).text(data);</span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">function</span> fun2()</span><br><span class="line">		 &#123;</span><br><span class="line">			 alert(<span class="string">"服务端繁忙"</span>)</span><br><span class="line">		 &#125;</span><br><span class="line">		 */</span><br><span class="line">		 //方法三：</span><br><span class="line">	 $.get(</span><br><span class="line">		 <span class="string">"logincheckServlet"</span>,</span><br><span class="line">		 <span class="string">"sname="</span>+$(<span class="string">"#user"</span>).val(),</span><br><span class="line">		   fun1</span><br><span class="line">	 )</span><br><span class="line"> &#125;</span><br><span class="line">	 //data就是从异步请求对象取得相应数据</span><br><span class="line">	 <span class="keyword">function</span> fun1(data)&#123;</span><br><span class="line">		 $(<span class="string">"#myfont"</span>).text(data);</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">function</span> fun2()</span><br><span class="line">	 &#123;</span><br><span class="line">		 alert(<span class="string">"服务端繁忙"</span>)</span><br><span class="line">	 &#125;</span><br><span class="line">&lt;!--一共写了三种方法，需要哪种就把注释去掉，把其它方法注销掉即可--&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h3><p>首页<br>![](/img/1.png）<br>错误<br>![](/img/2.png）<br>正确<br>![](/img/3.png）</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-AJAX" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -277,7 +334,7 @@
 
 3.xmlHttp.open(&quot;get&quot;,&quot;/myweb/one&quot;,true);
 4.xmlHttp.send();
-</code></pre><h3 id="3-AJAX中state和readyState的值的含义"><a href="#3-AJAX中state和readyState的值的含义" class="headerlink" title="3.AJAX中state和readyState的值的含义"></a>3.AJAX中state和readyState的值的含义</h3><pre><code>0：请求未初始化（还没有调用 open()）。
+</code></pre><h3 id="3-AJAX中state和readyState的值的含义："><a href="#3-AJAX中state和readyState的值的含义：" class="headerlink" title="3.AJAX中state和readyState的值的含义："></a>3.AJAX中state和readyState的值的含义：</h3><pre><code>0：请求未初始化（还没有调用 open()）。
 
 1：请求已经建立，但是还没有发送（还没有调用 send()）。
 
@@ -286,7 +343,7 @@
 3：请求在处理中；通常响应中已有部分数据可用了，但是服务器还没有完成响应的生成。
 
 4：响应已完成；您可以获取并使用服务器的响应了。
-</code></pre><h3 id="4-readyState值的含义"><a href="#4-readyState值的含义" class="headerlink" title="4.readyState值的含义"></a>4.readyState值的含义</h3><pre><code>等于1：说明请求已经准备好可以发送
+</code></pre><h3 id="4-readyState值的含义："><a href="#4-readyState值的含义：" class="headerlink" title="4.readyState值的含义："></a>4.readyState值的含义：</h3><pre><code>等于1：说明请求已经准备好可以发送
 
 等于2：服务器正在处理请求时会作出响应，响应首部提供了有关响应的信息，并提供一个状态码。
 
