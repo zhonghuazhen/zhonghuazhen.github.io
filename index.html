@@ -230,6 +230,63 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-idea的json数据显示问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/13/idea的json数据显示问题/" class="article-date">
+      <time datetime="2019-03-13T10:43:25.000Z" itemprop="datePublished">2019-03-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/idea的json数据显示问题/">idea的json数据显示问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="idea前端调用后台传来的数据"><a href="#idea前端调用后台传来的数据" class="headerlink" title="idea前端调用后台传来的数据"></a>idea前端调用后台传来的数据</h1><p>在学习springmvc的时候，用ajax获取后台的数据，前端输出时，数据显示undefined，在页面也无法显示，通过浏览器debug的时候发现有响应的数据，如下图所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 1.png %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>它的输出格式错误了，因为在配置pom.xml时添加了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.jaxrs&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-jaxrs-xml-provider&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.4.1&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">  &#123;% asset_img 2.png %&#125;</span><br></pre></td></tr></table></figure></p>
+<p>  导致在使用@RequestMapping时会自动把json数据变成xml文件，所以数据无法正常显示，把这段代码删掉就可以正常显示了。如下图所示：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 3.png %&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-picture1" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
