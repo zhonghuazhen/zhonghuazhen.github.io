@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-13T11:30:44.526Z</updated>
+  <updated>2019-03-13T11:33:11.134Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/03/13/idea%E7%9A%84json%E6%95%B0%E6%8D%AE%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/2019/03/13/idea的json数据显示问题/</id>
     <published>2019-03-13T10:43:25.000Z</published>
-    <updated>2019-03-13T11:30:44.526Z</updated>
+    <updated>2019-03-13T11:33:11.134Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="idea前端调用后台传来的数据"><a href="#idea前端调用后台传来的数据" class="headerlink" title="idea前端调用后台传来的数据"></a>idea前端调用后台传来的数据</h1><p>在学习springmvc的时候，用ajax获取后台的数据，前端输出时，数据显示undefined，在页面也无法显示，通过浏览器debug的时候发现有响应的数据，如下图所示：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 1.png %&#125;</span><br></pre></td></tr></table></figure></p><p>它的输出格式错误了，因为在配置pom.xml时添加了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.jaxrs&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-jaxrs-xml-provider&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.4.1&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">&#123;% asset_img 2.png %&#125;</span><br></pre></td></tr></table></figure></p><p> 导致在使用@RequestMapping时会自动把json数据变成xml文件，所以数据无法正常显示，把这段代码删掉就可以正常显示了。如下图所示：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img 3.png %&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="idea前端调用后台传来的数据"><a href="#idea前端调用后台传来的数据" class="headerlink" title="idea前端调用后台传来的数据"></a>idea前端调用后台传来的数据</h1><p>在学习springmvc的时候，用ajax获取后台的数据，前端输出时，数据显示undefined，在页面也无法显示，通过浏览器debug的时候发现有响应的数据，如下图所示：<br><img src="/2019/03/13/idea的json数据显示问题/1.png"><br>它的输出格式错误了，因为在配置pom.xml时添加了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.fasterxml.jackson.jaxrs&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jackson-jaxrs-xml-provider&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.4.1&lt;/version&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>  <img src="/2019/03/13/idea的json数据显示问题/2.png"><p> 导致在使用@RequestMapping时会自动把json数据变成xml文件，所以数据无法正常显示，把这段代码删掉就可以正常显示了。如下图所示：<br><img src="/2019/03/13/idea的json数据显示问题/3.png"></p>]]></content>
     
     <summary type="html">
     
