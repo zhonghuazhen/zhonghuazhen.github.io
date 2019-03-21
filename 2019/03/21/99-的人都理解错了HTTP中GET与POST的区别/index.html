@@ -3,23 +3,27 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>AJAX例子 | zhonghuazhen博客</title>
+  <title>99%的人都理解错了HTTP中GET与POST的区别 | zhonghuazhen博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="后台：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657public class LogincheckServlet extends HttpServlet &amp;#123;	@Override	protected void doGet(Htt">
+  <meta name="description" content="GET和POST的区别GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的人都能说出一二。 最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。 你可能自己写过无数个GET和POST请求，或者已经看过很多权威网站总结出的他们的区别，你非常清楚知道什么时候该用什么。 当你在面试中被问到这个问题，你的内心充满了自信和喜悦。  你轻轻松松">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AJAX例子">
-<meta property="og:url" content="http://yoursite.com/2019/03/09/AJAX例子/index.html">
+<meta property="og:title" content="99%的人都理解错了HTTP中GET与POST的区别">
+<meta property="og:url" content="http://yoursite.com/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/index.html">
 <meta property="og:site_name" content="zhonghuazhen博客">
-<meta property="og:description" content="后台：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657public class LogincheckServlet extends HttpServlet &amp;#123;	@Override	protected void doGet(Htt">
+<meta property="og:description" content="GET和POST的区别GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的人都能说出一二。 最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。 你可能自己写过无数个GET和POST请求，或者已经看过很多权威网站总结出的他们的区别，你非常清楚知道什么时候该用什么。 当你在面试中被问到这个问题，你的内心充满了自信和喜悦。  你轻轻松松">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/03/09/AJAX例子/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/09/AJAX例子/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/03/09/AJAX例子/3.png">
-<meta property="og:updated_time" content="2019-03-09T09:07:32.648Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171259977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171323403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171337825?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171351102?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171403966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171416899?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="https://img-blog.csdn.net/20161011171426419?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:updated_time" content="2019-03-21T06:53:16.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AJAX例子">
-<meta name="twitter:description" content="后台：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657public class LogincheckServlet extends HttpServlet &amp;#123;	@Override	protected void doGet(Htt">
-<meta name="twitter:image" content="http://yoursite.com/2019/03/09/AJAX例子/1.png">
+<meta name="twitter:title" content="99%的人都理解错了HTTP中GET与POST的区别">
+<meta name="twitter:description" content="GET和POST的区别GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的人都能说出一二。 最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。 你可能自己写过无数个GET和POST请求，或者已经看过很多权威网站总结出的他们的区别，你非常清楚知道什么时候该用什么。 当你在面试中被问到这个问题，你的内心充满了自信和喜悦。  你轻轻松松">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20161011171259977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
   
     <link rel="alternative" href="/atom.xml" title="zhonghuazhen博客" type="application/atom+xml">
   
@@ -221,11 +225,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-AJAX例子" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-99-的人都理解错了HTTP中GET与POST的区别" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/09/AJAX例子/" class="article-date">
-      <time datetime="2019-03-09T09:04:38.000Z" itemprop="datePublished">2019-03-09</time>
+      <a href="/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/" class="article-date">
+      <time datetime="2019-03-21T06:51:04.000Z" itemprop="datePublished">2019-03-21</time>
 </a>
     </div>
   
@@ -238,7 +242,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      AJAX例子
+      99%的人都理解错了HTTP中GET与POST的区别
     </h1>
   
 
@@ -255,9 +259,57 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="后台："><a href="#后台：" class="headerlink" title="后台："></a>后台：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">public class LogincheckServlet extends HttpServlet &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">		</span><br><span class="line">          String sname=null;</span><br><span class="line">          Connection conn=null;</span><br><span class="line">  		  Statement <span class="built_in">stat</span> =null;</span><br><span class="line">  	      PreparedStatement prep=null;</span><br><span class="line">  	      ResultSet rs=null;</span><br><span class="line">          String sql=<span class="string">"select count(*) from staff where sname =?"</span>;</span><br><span class="line">          int flag=0;</span><br><span class="line">		//1.读取由异步请求对象发送的参数</span><br><span class="line">		sname =req.getParameter(<span class="string">"sname"</span>);</span><br><span class="line">		</span><br><span class="line">		//2.JDBC，查询当前部门名称在数据库中是否已经存在；</span><br><span class="line">            try &#123;</span><br><span class="line">            	conn = DataAccess.getConnection();</span><br><span class="line">            	//需要自己写DataAccess类，然后在在类里面创建getConnection()方法；</span><br><span class="line">        		//执行sql语句</span><br><span class="line">        		prep=conn.prepareStatement(sql);</span><br><span class="line">        	    prep.setString(1, sname);</span><br><span class="line">        		rs=prep.executeQuery();</span><br><span class="line">        		//处理结果；</span><br><span class="line">        		rs.next();</span><br><span class="line">        		flag=rs.getInt(<span class="string">"count(*)"</span>);</span><br><span class="line">            	</span><br><span class="line">            &#125;catch(Exception ex)&#123;</span><br><span class="line">            	ex.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">		/*try &#123;</span><br><span class="line">			Thread.sleep(10000);//故意延长异步请求对象工作时间；</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			// TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;*/</span><br><span class="line">		//3.将判断结果发送给【异步请求对象】</span><br><span class="line">            resp.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br><span class="line">            PrintWriter out=resp.getWriter();</span><br><span class="line">           <span class="keyword">if</span> (flag&gt;=1) &#123;</span><br><span class="line">			out.print(<span class="string">"正确"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">           <span class="keyword">else</span> &#123;</span><br><span class="line">        	   out.println(<span class="string">"用户不存在"</span>);</span><br><span class="line">           &#125;</span><br><span class="line">           // System.out.println(<span class="string">"判断结果 "</span>+flag);</span><br><span class="line">		//resp.getWriter().<span class="built_in">print</span>(flag);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line"><span class="comment">### 前台：</span></span><br><span class="line">``` bash</span><br><span class="line">&lt;label <span class="keyword">for</span>=<span class="string">"user"</span> class=<span class="string">"label"</span>&gt;Username&lt;/label&gt;</span><br><span class="line">&lt;input id=<span class="string">"user"</span> name=<span class="string">"username"</span> <span class="built_in">type</span>=<span class="string">"text"</span> onblur=<span class="string">"checkSta()"</span> class=<span class="string">"input"</span>&gt;</span><br><span class="line">&lt;font id=<span class="string">"myfont"</span> color=<span class="string">"red"</span>&gt;*&lt;/font&gt;</span><br><span class="line">&lt;!--通过onblur=<span class="string">"checkSta()"</span>调用JavaScript（当鼠标离开这个文本框并点击其它地方时触发）--&gt;</span><br><span class="line">&lt;!--myfont用于显示信息--&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="JavaScript方法："><a href="#JavaScript方法：" class="headerlink" title="JavaScript方法："></a>JavaScript方法：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"> <span class="keyword">function</span> checkSta()</span><br><span class="line"> &#123;</span><br><span class="line">	 /*</span><br><span class="line">	 //方法一：</span><br><span class="line">	 </span><br><span class="line">	   //1.创建一个异步请求对象</span><br><span class="line">	        var xmlHttp=new XMLHttpRequest();</span><br><span class="line">	   //2.设置异步请求对象工作状态监听</span><br><span class="line">	   xmlHttp.onreadystatechange=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		   <span class="keyword">if</span>(xmlHttp.readyState == 4)</span><br><span class="line">			   &#123;</span><br><span class="line">		   //从异步请求对象身上得到服务器端返回响应数据</span><br><span class="line">		   var data=xmlHttp.responseText;</span><br><span class="line">		  //局部刷新效果</span><br><span class="line">		  <span class="keyword">if</span>(data &gt;=1)</span><br><span class="line">			  &#123;</span><br><span class="line">			  document.getElementById(<span class="string">"myfont"</span>).innerText=<span class="string">"正确"</span>;	 </span><br><span class="line">			  &#125;</span><br><span class="line">		  <span class="keyword">else</span>&#123;</span><br><span class="line">		  document.getElementById(<span class="string">"myfont"</span>).innerText=<span class="string">"用户不存在"</span>;	</span><br><span class="line">		  &#125;</span><br><span class="line">			   &#125;</span><br><span class="line">		 &#125;;</span><br><span class="line">		 //3.初始化异步请求对象；</span><br><span class="line">		var param= document.getElementById(<span class="string">"user"</span>).value;</span><br><span class="line">		 //xmlHttp.open(<span class="string">"get"</span>,<span class="string">"logincheckServlet?sname="</span>+param,<span class="literal">false</span>);//同步；</span><br><span class="line">		 xmlHttp.open(<span class="string">"get"</span>,<span class="string">"logincheckServlet?sname="</span>+param,<span class="literal">true</span>);//异步</span><br><span class="line">		 //4.通知异步请求对象发送请求；</span><br><span class="line">		 xmlHttp.send();</span><br><span class="line">		 </span><br><span class="line">		 //5.浏览器执行的命令</span><br><span class="line">		 window.alert(<span class="string">"德玛西亚....."</span>);</span><br><span class="line">		 */</span><br><span class="line">		 </span><br><span class="line">		 //方法二：</span><br><span class="line">		 /*$.ajax(&#123;</span><br><span class="line">			 <span class="built_in">type</span>:<span class="string">"get"</span>,</span><br><span class="line">			 url:<span class="string">"logincheckServlet"</span>,</span><br><span class="line">			 data:&#123;sname:$(<span class="string">"#user"</span>).val()&#125;,</span><br><span class="line">			 dataType:<span class="string">"text"</span>,</span><br><span class="line">			 success:fun1,</span><br><span class="line">			error:fun2</span><br><span class="line">		 &#125;);</span><br><span class="line">		 </span><br><span class="line">		 //data就是从异步请求对象取得相应数据</span><br><span class="line">		 <span class="keyword">function</span> fun1(data)&#123;</span><br><span class="line">			 $(<span class="string">"#myfont"</span>).text(data);</span><br><span class="line">		 &#125;</span><br><span class="line">		 <span class="keyword">function</span> fun2()</span><br><span class="line">		 &#123;</span><br><span class="line">			 alert(<span class="string">"服务端繁忙"</span>)</span><br><span class="line">		 &#125;</span><br><span class="line">		 */</span><br><span class="line">		 //方法三：</span><br><span class="line">	 $.get(</span><br><span class="line">		 <span class="string">"logincheckServlet"</span>,</span><br><span class="line">		 <span class="string">"sname="</span>+$(<span class="string">"#user"</span>).val(),</span><br><span class="line">		   fun1</span><br><span class="line">	 )</span><br><span class="line"> &#125;</span><br><span class="line">	 //data就是从异步请求对象取得相应数据</span><br><span class="line">	 <span class="keyword">function</span> fun1(data)&#123;</span><br><span class="line">		 $(<span class="string">"#myfont"</span>).text(data);</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">function</span> fun2()</span><br><span class="line">	 &#123;</span><br><span class="line">		 alert(<span class="string">"服务端繁忙"</span>)</span><br><span class="line">	 &#125;</span><br><span class="line">&lt;!--一共写了三种方法，需要哪种就把注释去掉，把其它方法注销掉即可--&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h3><p>首页<br><img src="/2019/03/09/AJAX例子/1.png"><br>错误<br><img src="/2019/03/09/AJAX例子/2.png"><br>正确<br><img src="/2019/03/09/AJAX例子/3.png"></p>
+        <h2 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h2><p>GET和POST是HTTP请求的两种基本方法，要说它们的区别，接触过WEB开发的人都能说出一二。</p>
+<p>最直观的区别就是GET把参数包含在URL中，POST通过request body传递参数。</p>
+<p>你可能自己写过无数个GET和POST请求，或者已经看过很多权威网站总结出的他们的区别，你非常清楚知道什么时候该用什么。</p>
+<p>当你在面试中被问到这个问题，你的内心充满了自信和喜悦。</p>
+<p><img src="https://img-blog.csdn.net/20161011171259977?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>你轻轻松松的给出了一个“标准答案”：</p>
+<p>GET在浏览器回退时是无害的，而POST会再次提交请求。</p>
+<p>GET产生的URL地址可以被Bookmark，而POST不可以。</p>
+<p>GET请求会被浏览器主动cache，而POST不会，除非手动设置。</p>
+<p>GET请求只能进行url编码，而POST支持多种编码方式。</p>
+<p>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。</p>
+<p>GET请求在URL中传送的参数是有长度限制的，而POST么有。</p>
+<p>对参数的数据类型，GET只接受ASCII字符，而POST没有限制。</p>
+<p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传递敏感信息。</p>
+<p>GET参数通过URL传递，POST放在Request body中。</p>
+<p>（本标准答案参考自w3schools）</p>
+<p>“很遗憾，这不是我们要的回答！”</p>
+<p> <img src="https://img-blog.csdn.net/20161011171323403?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>请告诉我真相。。。</p>
+<p>如果我告诉你GET和POST本质上没有区别你信吗？<br>让我们扒下GET和POST的外衣，坦诚相见吧！</p>
+<p> <img src="https://img-blog.csdn.net/20161011171337825?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>GET和POST是什么？HTTP协议中的两种发送请求的方法。</p>
+<p>HTTP是什么？HTTP是基于TCP/IP的关于数据如何在万维网中如何通信的协议。</p>
+<p>HTTP的底层是TCP/IP。所以GET和POST的底层也是TCP/IP，也就是说，GET/POST都是TCP链接。GET和POST能做的事情是一样一样的。你要给GET加上request body，给POST带上url参数，技术上是完全行的通的。 </p>
+<p>那么，“标准答案”里的那些区别是怎么回事？<br><img src="https://img-blog.csdn.net/20161011171351102?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>在我大万维网世界中，TCP就像汽车，我们用TCP来运输数据，它很可靠，从来不会发生丢件少件的现象。但是如果路上跑的全是看起来一模一样的汽车，那这个世界看起来是一团混乱，送急件的汽车可能被前面满载货物的汽车拦堵在路上，整个交通系统一定会瘫痪。为了避免这种情况发生，交通规则HTTP诞生了。HTTP给汽车运输设定了好几个服务类别，有GET, POST, PUT, DELETE等等，HTTP规定，当执行GET请求的时候，要给汽车贴上GET的标签（设置method为GET），而且要求把传送的数据放在车顶上（url中）以方便记录。如果是POST请求，就要在车上贴上POST的标签，并把货物放在车厢里。当然，你也可以在GET的时候往车厢内偷偷藏点货物，但是这是很不光彩；也可以在POST的时候在车顶上也放一些数据，让人觉得傻乎乎的。HTTP只是个行为准则，而TCP才是GET和POST怎么实现的基本。</p>
+<p>但是，我们只看到HTTP对GET和POST参数的传送渠道（url还是requrest body）提出了要求。“标准答案”里关于参数大小的限制又是从哪来的呢？<br><img src="https://img-blog.csdn.net/20161011171403966?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>在我大万维网世界中，还有另一个重要的角色：运输公司。不同的浏览器（发起http请求）和服务器（接受http请求）就是不同的运输公司。 虽然理论上，你可以在车顶上无限的堆货物（url中无限加参数）。但是运输公司可不傻，装货和卸货也是有很大成本的，他们会限制单次运输量来控制风险，数据量太大对浏览器和服务器都是很大负担。业界不成文的规定是，（大多数）浏览器通常都会限制url长度在2K个字节，而（大多数）服务器最多处理64K大小的url。超过的部分，恕不处理。如果你用GET服务，在request body偷偷藏了数据，不同服务器的处理方式也是不同的，有些服务器会帮你卸货，读出数据，有些服务器直接忽略，所以，虽然GET可以带request body，也不能保证一定能被接收到哦。</p>
+<p>好了，现在你知道，GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。 </p>
+<p>你以为本文就这么结束了？</p>
+<p><img src="https://img-blog.csdn.net/20161011171416899?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>我们的大BOSS还等着出场呢。。。</p>
+<p>这位BOSS有多神秘？当你试图在网上找“GET和POST的区别”的时候，那些你会看到的搜索结果里，从没有提到他。他究竟是什么呢。。。</p>
+<p>GET和POST还有一个重大区别，简单的说：</p>
+<p>GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
+<p>长的说：</p>
+<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+<p>也就是说，GET只需要汽车跑一趟就把货送到了，而POST得跑两趟，第一趟，先去和服务器打个招呼“嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。</p>
+<p>因为POST需要两步，时间上消耗的要多一点，看起来GET比POST更有效。因此Yahoo团队有推荐用GET替换POST来优化网站性能。但这是一个坑！跳入需谨慎。为什么？</p>
+<ol>
+<li><p>GET与POST都有自己的语义，不能随便混用。</p>
+</li>
+<li><p>据研究，在网络环境好的情况下，发一次包的时间和发两次包的时间差别基本可以无视。而在网络环境差的情况下，两次包的TCP在验证数据包完整性上，有非常大的优点。</p>
+</li>
+<li><p>并不是所有浏览器都会在POST中发送两次包，Firefox就只发送一次。</p>
+</li>
+</ol>
+<p>现在，当面试官再问你“GET与POST的区别”的时候，你的内心是不是这样的？</p>
+<p> <img src="https://img-blog.csdn.net/20161011171426419?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Alt"></p>
+<p>文章来源：<a href="http://t.cn/RjLq41J" target="_blank" rel="noopener">http://t.cn/RjLq41J</a></p>
 
       
       
@@ -313,13 +365,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/09/AJAX例子/">AJAX例子</a></p>
+        <p><span>本文标题:</span><a href="/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/">99%的人都理解错了HTTP中GET与POST的区别</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 zhonghuazhen 的个人博客">zhonghuazhen</a></p>
-        <p><span>发布时间:</span>2019年03月09日 - 17时04分</p>
-        <p><span>最后更新:</span>2019年03月09日 - 17时07分</p>
+        <p><span>发布时间:</span>2019年03月21日 - 14时51分</p>
+        <p><span>最后更新:</span>2019年03月21日 - 14时53分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/09/AJAX例子/" title="AJAX例子">http://yoursite.com/2019/03/09/AJAX例子/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/03/09/AJAX例子/　　作者: zhonghuazhen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/" title="99%的人都理解错了HTTP中GET与POST的区别">http://yoursite.com/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/　　作者: zhonghuazhen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -332,18 +384,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/03/09/picture1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          picture1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/09/AJAX/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AJAX</div>
+    <a href="/2019/03/13/idea的json数据显示问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">idea的json数据显示问题</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -354,7 +397,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#后台："><span class="toc-number">1.</span> <span class="toc-text">后台：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript方法："><span class="toc-number">2.</span> <span class="toc-text">JavaScript方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#效果图："><span class="toc-number">3.</span> <span class="toc-text">效果图：</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#GET和POST的区别"><span class="toc-number">1.</span> <span class="toc-text">GET和POST的区别</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -421,13 +464,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/09/picture1/" title="上一篇: picture1">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/03/09/AJAX/" title="下一篇: AJAX">
+            <a href="/2019/03/13/idea的json数据显示问题/" title="下一篇: idea的json数据显示问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
