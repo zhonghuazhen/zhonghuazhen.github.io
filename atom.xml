@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-07T12:02:51.895Z</updated>
+  <updated>2019-04-28T14:27:06.261Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android调用本机摄像机</title>
+    <link href="http://yoursite.com/2019/04/28/Android%E8%B0%83%E7%94%A8%E6%9C%AC%E6%9C%BA%E6%91%84%E5%83%8F%E6%9C%BA/"/>
+    <id>http://yoursite.com/2019/04/28/Android调用本机摄像机/</id>
+    <published>2019-04-28T13:43:40.000Z</published>
+    <updated>2019-04-28T14:27:06.261Z</updated>
+    
+    <content type="html"><![CDATA[<p>##Android无法调用本机摄像机<br>由于Android有一个作业是要调用真机中的摄像机去拍照、录视频，所以就写了一下相机的调用，照着老师的资料写完之后，无法调用真机中的相机功能，并且还出现了闪退的状况，在对比了多次代码和百度后，发现是由于没有在真机中给予软件调用摄像机的权限，所以不能调用，在给予了权限后，就可以正常使用了。对于无法调用真机中的摄像，可能是由以下的原因导致的：<br>1.java方法没写对<br>2.AndroidManifest.xml中没有给权限<br>3.真机中没有给权限<br>第一点就不说了，百度查看调用方法即可。主要讲一下第二点和第三点。</p><p>##AndroidManifest.xml中没有给权限<br><a id="more"></a><br>因为使用了摄像头和存储卡，所以需要添加相应的权限：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 使用外部存储卡的权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span><br><span class="line">&lt;!-- 使用摄像头的权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CAMERA"</span> /&gt;</span><br></pre></td></tr></table></figure></p><p>##真机需要给予权限<br>Google在 Android 6.0 开始引入了权限申请机制，将所有权限分成了正常权限和危险权限。应用的相关功能每次在使用危险权限时需要动态的申请并得到用户的授权才能使用。所以需要写方法去申请获取权限。由于我是看老师的资料写的相机，感觉他的资料是很久的了，所以并没有提到要写方法去获取权限，只是说要在AndroidManifest.xml中添加权限而已。在不修改代码的情况下，我们可以在真机中执行如下操作：设置-&gt;授权管理-&gt;应用权限管理-&gt;你要测试的软件-&gt;相机（允许）-&gt;读写手机存储（允许）。<br>执行如上操作后应该就可以了，不过这样是有缺点的，当修改代码，然后在真机上运行时，由于会删除原先的测试案例，然后再重新安装，所以这个时候就需要再次在真机中给予权限了，所以这个方法并不是很好，可以在代码中编写方法，这样在打开软件时，自动弹出来让我们去授权，这个可以去百度查找，有很多的例子。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##Android无法调用本机摄像机&lt;br&gt;由于Android有一个作业是要调用真机中的摄像机去拍照、录视频，所以就写了一下相机的调用，照着老师的资料写完之后，无法调用真机中的相机功能，并且还出现了闪退的状况，在对比了多次代码和百度后，发现是由于没有在真机中给予软件调用摄像机的权限，所以不能调用，在给予了权限后，就可以正常使用了。对于无法调用真机中的摄像，可能是由以下的原因导致的：&lt;br&gt;1.java方法没写对&lt;br&gt;2.AndroidManifest.xml中没有给权限&lt;br&gt;3.真机中没有给权限&lt;br&gt;第一点就不说了，百度查看调用方法即可。主要讲一下第二点和第三点。&lt;/p&gt;
+&lt;p&gt;##AndroidManifest.xml中没有给权限&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>99%的人都理解错了HTTP中GET与POST的区别</title>

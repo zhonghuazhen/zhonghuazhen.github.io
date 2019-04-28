@@ -3,19 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>hexo的使用 | zhonghuazhen博客</title>
+  <title>Android调用本机摄像机 | zhonghuazhen博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo创建新的文章hexo new aa//aa指的是保存新建文章的MD文件，输入完指令，等指令执行完，生成一个aa.md文件后，去本地保存博客的地方E:\博客\test\source_posts（根据个人情况修改），可以使用记事本打开，有sublime的话使用sublime打开更好，格式会好看点。里面的内容百度查找格式。 在github上更新新的文章">
+  <meta name="description" content="##Android无法调用本机摄像机由于Android有一个作业是要调用真机中的摄像机去拍照、录视频，所以就写了一下相机的调用，照着老师的资料写完之后，无法调用真机中的相机功能，并且还出现了闪退的状况，在对比了多次代码和百度后，发现是由于没有在真机中给予软件调用摄像机的权限，所以不能调用，在给予了权限后，就可以正常使用了。对于无法调用真机中的摄像，可能是由以下的原因导致的：1.java方法没写对2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo的使用">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/hexo/index.html">
+<meta property="og:title" content="Android调用本机摄像机">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/Android调用本机摄像机/index.html">
 <meta property="og:site_name" content="zhonghuazhen博客">
-<meta property="og:description" content="hexo创建新的文章hexo new aa//aa指的是保存新建文章的MD文件，输入完指令，等指令执行完，生成一个aa.md文件后，去本地保存博客的地方E:\博客\test\source_posts（根据个人情况修改），可以使用记事本打开，有sublime的话使用sublime打开更好，格式会好看点。里面的内容百度查找格式。 在github上更新新的文章">
+<meta property="og:description" content="##Android无法调用本机摄像机由于Android有一个作业是要调用真机中的摄像机去拍照、录视频，所以就写了一下相机的调用，照着老师的资料写完之后，无法调用真机中的相机功能，并且还出现了闪退的状况，在对比了多次代码和百度后，发现是由于没有在真机中给予软件调用摄像机的权限，所以不能调用，在给予了权限后，就可以正常使用了。对于无法调用真机中的摄像，可能是由以下的原因导致的：1.java方法没写对2">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-07T12:04:50.967Z">
+<meta property="og:updated_time" content="2019-04-28T14:27:06.261Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo的使用">
-<meta name="twitter:description" content="hexo创建新的文章hexo new aa//aa指的是保存新建文章的MD文件，输入完指令，等指令执行完，生成一个aa.md文件后，去本地保存博客的地方E:\博客\test\source_posts（根据个人情况修改），可以使用记事本打开，有sublime的话使用sublime打开更好，格式会好看点。里面的内容百度查找格式。 在github上更新新的文章">
+<meta name="twitter:title" content="Android调用本机摄像机">
+<meta name="twitter:description" content="##Android无法调用本机摄像机由于Android有一个作业是要调用真机中的摄像机去拍照、录视频，所以就写了一下相机的调用，照着老师的资料写完之后，无法调用真机中的相机功能，并且还出现了闪退的状况，在对比了多次代码和百度后，发现是由于没有在真机中给予软件调用摄像机的权限，所以不能调用，在给予了权限后，就可以正常使用了。对于无法调用真机中的摄像，可能是由以下的原因导致的：1.java方法没写对2">
   
     <link rel="alternative" href="/atom.xml" title="zhonghuazhen博客" type="application/atom+xml">
   
@@ -201,11 +201,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hexo" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Android调用本机摄像机" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/25/hexo/" class="article-date">
-      <time datetime="2019-02-25T00:37:57.000Z" itemprop="datePublished">2019-02-25</time>
+      <a href="/2019/04/28/Android调用本机摄像机/" class="article-date">
+      <time datetime="2019-04-28T13:43:40.000Z" itemprop="datePublished">2019-04-28</time>
 </a>
     </div>
   
@@ -218,7 +218,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo的使用
+      Android调用本机摄像机
     </h1>
   
 
@@ -235,9 +235,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h1 id="hexo创建新的文章"><a href="#hexo创建新的文章" class="headerlink" title="hexo创建新的文章"></a>hexo创建新的文章</h1><p>hexo new aa<br>//aa指的是保存新建文章的MD文件，输入完指令，等指令执行完，生成一个aa.md文件后，去本地保存博客的地方E:\博客\test\source_posts（根据个人情况修改），可以使用记事本打开，有sublime的话使用sublime打开更好，格式会好看点。里面的内容百度查找格式。</p>
-<h1 id="在github上更新新的文章"><a href="#在github上更新新的文章" class="headerlink" title="在github上更新新的文章"></a>在github上更新新的文章</h1><a id="more"></a>
-<p>1.进入cmd<br>2.进入保存博客的地址，例如：cd E:\博客\test，根据个人情况修改。<br>3.hexo clean<br>4.hexo g<br>5.hexo d<br>//如果设置了密码，那么5和6都有输入用户名和密码。<br>6.hexo d -g<br>//执行完上面的指令后，github上面的数据就会被刷新。</p>
+        <p>##Android无法调用本机摄像机<br>由于Android有一个作业是要调用真机中的摄像机去拍照、录视频，所以就写了一下相机的调用，照着老师的资料写完之后，无法调用真机中的相机功能，并且还出现了闪退的状况，在对比了多次代码和百度后，发现是由于没有在真机中给予软件调用摄像机的权限，所以不能调用，在给予了权限后，就可以正常使用了。对于无法调用真机中的摄像，可能是由以下的原因导致的：<br>1.java方法没写对<br>2.AndroidManifest.xml中没有给权限<br>3.真机中没有给权限<br>第一点就不说了，百度查看调用方法即可。主要讲一下第二点和第三点。</p>
+<p>##AndroidManifest.xml中没有给权限<br><a id="more"></a><br>因为使用了摄像头和存储卡，所以需要添加相应的权限：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 使用外部存储卡的权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.WRITE_EXTERNAL_STORAGE"</span> /&gt;</span><br><span class="line">&lt;!-- 使用摄像头的权限 --&gt;</span><br><span class="line">&lt;uses-permission android:name=<span class="string">"android.permission.CAMERA"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##真机需要给予权限<br>Google在 Android 6.0 开始引入了权限申请机制，将所有权限分成了正常权限和危险权限。应用的相关功能每次在使用危险权限时需要动态的申请并得到用户的授权才能使用。所以需要写方法去申请获取权限。由于我是看老师的资料写的相机，感觉他的资料是很久的了，所以并没有提到要写方法去获取权限，只是说要在AndroidManifest.xml中添加权限而已。在不修改代码的情况下，我们可以在真机中执行如下操作：设置-&gt;授权管理-&gt;应用权限管理-&gt;你要测试的软件-&gt;相机（允许）-&gt;读写手机存储（允许）。<br>执行如上操作后应该就可以了，不过这样是有缺点的，当修改代码，然后在真机上运行时，由于会删除原先的测试案例，然后再重新安装，所以这个时候就需要再次在真机中给予权限了，所以这个方法并不是很好，可以在代码中编写方法，这样在打开软件时，自动弹出来让我们去授权，这个可以去百度查找，有很多的例子。</p>
 
       
       
@@ -293,13 +293,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/02/25/hexo/">hexo的使用</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/28/Android调用本机摄像机/">Android调用本机摄像机</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 zhonghuazhen 的个人博客">zhonghuazhen</a></p>
-        <p><span>发布时间:</span>2019年02月25日 - 08时37分</p>
-        <p><span>最后更新:</span>2019年04月07日 - 20时04分</p>
+        <p><span>发布时间:</span>2019年04月28日 - 21时43分</p>
+        <p><span>最后更新:</span>2019年04月28日 - 22时27分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/02/25/hexo/" title="hexo的使用">http://yoursite.com/2019/02/25/hexo/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/02/25/hexo/　　作者: zhonghuazhen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/28/Android调用本机摄像机/" title="Android调用本机摄像机">http://yoursite.com/2019/04/28/Android调用本机摄像机/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/04/28/Android调用本机摄像机/　　作者: zhonghuazhen" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -312,18 +312,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/02/28/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/25/SQL/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SQL常用指令</div>
+    <a href="/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">99%的人都理解错了HTTP中GET与POST的区别</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -334,7 +325,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo创建新的文章"><span class="toc-number">1.</span> <span class="toc-text">hexo创建新的文章</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在github上更新新的文章"><span class="toc-number">2.</span> <span class="toc-text">在github上更新新的文章</span></a></li></ol>
+    
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -401,13 +392,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/02/28/hello-world/" title="上一篇: Hello World">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/02/25/SQL/" title="下一篇: SQL常用指令">
+            <a href="/2019/03/21/99-的人都理解错了HTTP中GET与POST的区别/" title="下一篇: 99%的人都理解错了HTTP中GET与POST的区别">
                 <i class="fa fa-angle-right"></i>
             </a>
         
