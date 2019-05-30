@@ -202,6 +202,62 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Android一次申请多个权限" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/30/Android一次申请多个权限/" class="article-date">
+      <time datetime="2019-05-30T01:17:06.000Z" itemprop="datePublished">2019-05-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/30/Android一次申请多个权限/">Android一次申请多个权限</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近在搞一个闹钟，需要读取本地的音乐来设置响铃，一切准备就绪后在手机上测试时，程序出现闪退，然后想起是没有给读写文件的权限，所以在设置里给程序授予了读写的权限，但由于要不断修改程序，所以每测试一次程序都要去授权，如果采用手动去授权的话会比较麻烦，所以采用自动获取的方式。方法如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">     </span><br><span class="line">@public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">Override</span><br><span class="line">   protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">       super.onCreate(savedInstanceState);</span><br><span class="line">       setContentView(R.layout.activity_main);</span><br><span class="line"></span><br><span class="line">       //获取权限</span><br><span class="line">       <span class="keyword">if</span> (Build.VERSION.SDK_INT &gt;= 23) &#123;//6.0才用动态权限</span><br><span class="line">           initPermission();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   //获取权限</span><br><span class="line">   //申请两个权限，唤醒和文件读写</span><br><span class="line">   //1、首先声明一个数组permissions，将需要的权限都放在里面</span><br><span class="line">   String[] permissions = new String[]&#123;Manifest.permission.WAKE_LOCK,</span><br><span class="line">           Manifest.permission.READ_EXTERNAL_STORAGE&#125;;</span><br><span class="line">   //2、创建一个mPermissionList，逐个判断哪些权限未授予，未授予的权限存储到mPerrrmissionList中</span><br><span class="line">   List&lt;String&gt; mPermissionList = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">   private final int mRequestCode = 100;//权限请求码</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   //权限判断和申请</span><br><span class="line">   private void <span class="function"><span class="title">initPermission</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">       mPermissionList.clear();//清空没有通过的权限</span><br><span class="line"></span><br><span class="line">       //逐个判断你要的权限是否已经通过</span><br><span class="line">       <span class="keyword">for</span> (int i = 0; i &lt; permissions.length; i++) &#123;</span><br><span class="line">           <span class="keyword">if</span> (ContextCompat.checkSelfPermission(this, permissions[i]) != PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">               mPermissionList.add(permissions[i]);//添加还未授予的权限</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       //申请权限</span><br><span class="line">       <span class="keyword">if</span> (mPermissionList.size() &gt; 0) &#123;//有权限没有通过，需要申请</span><br><span class="line">           ActivityCompat.requestPermissions(this, permissions, mRequestCode);</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           //说明权限都已经通过，可以做你想做的事情去</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   //请求权限后回调的方法</span><br><span class="line">   //参数： requestCode  是我们自己定义的权限请求码</span><br><span class="line">   //参数： permissions  是我们请求的权限名称数组</span><br><span class="line">   //参数： grantResults 是我们在弹出页面后是否允许权限的标识数组，数组的长度对应的是权限名称数组的长度，数组的数据0表示允许权限，-1表示我们点击了禁止权限</span><br><span class="line">   @Override</span><br><span class="line">   public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,</span><br><span class="line">                                          @NonNull int[] grantResults) &#123;</span><br><span class="line">       super.onRequestPermissionsResult(requestCode, permissions, grantResults);</span><br><span class="line">       boolean hasPermissionDismiss = <span class="literal">false</span>;//有权限没有通过</span><br><span class="line">       <span class="keyword">if</span> (mRequestCode == requestCode) &#123;</span><br><span class="line">           <span class="keyword">for</span> (int i = 0; i &lt; grantResults.length; i++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (grantResults[i] == -1) &#123;</span><br><span class="line">                   hasPermissionDismiss = <span class="literal">true</span>;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           //如果有权限没有被允许</span><br><span class="line">           <span class="keyword">if</span> (hasPermissionDismiss) &#123;</span><br><span class="line">               showPermissionDialog();//跳转到系统设置权限页面，或者直接关闭页面，不让他继续访问</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               //全部权限通过，可以进行下一步操作。。。</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   /**</span><br><span class="line">    * 不再提示权限时的展示对话框</span><br><span class="line">    */</span><br><span class="line">   AlertDialog mPermissionDialog;</span><br><span class="line">   String mPackName = <span class="string">"com.example.administrator.alarmclock"</span>;</span><br><span class="line"></span><br><span class="line">   private void <span class="function"><span class="title">showPermissionDialog</span></span>() &#123;</span><br><span class="line">       <span class="keyword">if</span> (mPermissionDialog == null) &#123;</span><br><span class="line">           mPermissionDialog = new AlertDialog.Builder(this)</span><br><span class="line">                   .setMessage(<span class="string">"已禁用权限，是否确定授予权限"</span>)</span><br><span class="line">                   .setPositiveButton(<span class="string">"确定"</span>, new DialogInterface.<span class="function"><span class="title">OnClickListener</span></span>() &#123;</span><br><span class="line">                       @Override</span><br><span class="line">                       public void onClick(DialogInterface dialog, int <span class="built_in">which</span>) &#123;</span><br><span class="line">                           cancelPermissionDialog();</span><br><span class="line"></span><br><span class="line">                           Uri packageURI = Uri.parse(<span class="string">"package:"</span> + mPackName);</span><br><span class="line">                           Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, packageURI);</span><br><span class="line">                           startActivity(intent);</span><br><span class="line">                       &#125;</span><br><span class="line">                   &#125;)</span><br><span class="line">                   .setNegativeButton(<span class="string">"取消"</span>, new DialogInterface.<span class="function"><span class="title">OnClickListener</span></span>() &#123;</span><br><span class="line">                       @Override</span><br><span class="line">                       public void onClick(DialogInterface dialog, int <span class="built_in">which</span>) &#123;</span><br><span class="line">                           //关闭页面或者做其他操作</span><br><span class="line">                           cancelPermissionDialog();</span><br><span class="line"></span><br><span class="line">                       &#125;</span><br><span class="line">                   &#125;)</span><br><span class="line">                   .create();</span><br><span class="line">       &#125;</span><br><span class="line">       mPermissionDialog.show();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   //关闭对话框</span><br><span class="line">   private void <span class="function"><span class="title">cancelPermissionDialog</span></span>() &#123;</span><br><span class="line">       mPermissionDialog.cancel();</span><br><span class="line">   &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以将获取权限的方法放在需要权限的类里面，这个没有限制的，不一定要放在MainActivity里面。代码是参考<a href="https://blog.csdn.net/wenzhi20102321/article/details/80487975里面的。" target="_blank" rel="noopener">https://blog.csdn.net/wenzhi20102321/article/details/80487975里面的。</a></p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Android调用本机摄像机" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -747,66 +803,10 @@
 
 
   
-    <article id="post-Frist" class="article article-type-post" itemscope="" itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2019/01/31/Frist/" class="article-date">
-      <time datetime="2019-01-31T11:51:30.000Z" itemprop="datePublished">2019-01-31</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/31/Frist/">博客格式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="欢迎使用Markdown编辑器"><a href="#欢迎使用Markdown编辑器" class="headerlink" title="欢迎使用Markdown编辑器"></a>欢迎使用Markdown编辑器</h1><p>你好！ 这是你第一次使用 <strong>Markdown编辑器</strong> 所展示的欢迎页。如果你想学习如何使用Markdown编辑器, 可以仔细阅读这篇文章，了解一下Markdown的基本语法知识。（抄袭CSDN的解释）</p>
-<h2 id="新的改变"><a href="#新的改变" class="headerlink" title="新的改变"></a>新的改变</h2><p>我们对Markdown编辑器进行了一些功能拓展与语法支持，除了标准的Markdown编辑器功能，我们增加了如下几点新功能，帮助你用它写博客：<br>
-          
-      
-      
-    </p></div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2019/01/31/Frist/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
