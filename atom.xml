@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-20T13:29:10.627Z</updated>
+  <updated>2019-06-20T13:36:10.906Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/06/20/%E8%B7%AF%E7%94%B1%E5%99%A8%E4%BC%AA%E8%A3%85%E7%94%B5%E8%84%91%E5%BC%80WiFi/"/>
     <id>http://yoursite.com/2019/06/20/路由器伪装电脑开WiFi/</id>
     <published>2019-06-20T13:26:13.000Z</published>
-    <updated>2019-06-20T13:29:10.627Z</updated>
+    <updated>2019-06-20T13:36:10.906Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。"><a href="#当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。" class="headerlink" title="当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。"></a>当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。</h3><h3 id="第一：先连接网线，成功上网后，进入cmd，使用ipconfig-all命令"><a href="#第一：先连接网线，成功上网后，进入cmd，使用ipconfig-all命令" class="headerlink" title="第一：先连接网线，成功上网后，进入cmd，使用ipconfig/all命令"></a>第一：先连接网线，成功上网后，进入cmd，使用ipconfig/all命令</h3><p>查看服务商提供的ip地址、网关、DNS服务器。如下图<br><a id="more"></a><br><img src="/2019/06/20/路由器伪装电脑开WiFi/1.png"><br>这里需要用到物理地址、ipv4地址、子网掩码、默认网关、DNS服务器。</p><h3 id="第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图："><a href="#第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图：" class="headerlink" title="第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图："></a>第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图：</h3><img src="/2019/06/20/路由器伪装电脑开WiFi/2.png"><p>在MAC地址设置中，使用自定义MAC地址，地址设置为图一中获取的物理地址。</p><h3 id="第三设置ip地址、子网掩码、网关、DNS服务器。"><a href="#第三设置ip地址、子网掩码、网关、DNS服务器。" class="headerlink" title="第三设置ip地址、子网掩码、网关、DNS服务器。"></a>第三设置ip地址、子网掩码、网关、DNS服务器。</h3><img src="/2019/06/20/路由器伪装电脑开WiFi/3.png"><h3 id="做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。"><a href="#做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。" class="headerlink" title="做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。"></a>做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。"><a href="#当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。" class="headerlink" title="当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。"></a>当宽带套餐只能直连电脑上网时，使用本文的方法，可以实现路由器开WiFi上网的功能。</h3><h3 id="第一：先连接网线，成功上网后，进入cmd，使用ipconfig-all命令"><a href="#第一：先连接网线，成功上网后，进入cmd，使用ipconfig-all命令" class="headerlink" title="第一：先连接网线，成功上网后，进入cmd，使用ipconfig/all命令"></a>第一：先连接网线，成功上网后，进入cmd，使用ipconfig/all命令</h3><p>查看服务商提供的ip地址、网关、DNS服务器。如下图<br><a id="more"></a></p><img src="/2019/06/20/路由器伪装电脑开WiFi/1.png"><p>这里需要用到物理地址、ipv4地址、子网掩码、默认网关、DNS服务器。</p><h3 id="第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图："><a href="#第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图：" class="headerlink" title="第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图："></a>第二拔掉网线，把网线插到路由器中，然后电脑连接WiFi，进入WiFi设置页面，这里采用水星路由器，如下图：</h3><img src="/2019/06/20/路由器伪装电脑开WiFi/2.png"><p>在MAC地址设置中，使用自定义MAC地址，地址设置为图一中获取的物理地址。</p><h3 id="第三设置ip地址、子网掩码、网关、DNS服务器。"><a href="#第三设置ip地址、子网掩码、网关、DNS服务器。" class="headerlink" title="第三设置ip地址、子网掩码、网关、DNS服务器。"></a>第三设置ip地址、子网掩码、网关、DNS服务器。</h3><img src="/2019/06/20/路由器伪装电脑开WiFi/3.png"><h3 id="做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。"><a href="#做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。" class="headerlink" title="做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。"></a>做完以上三个步骤后，就能直接使用WiFi来上网。避免了只能使用连线上网的麻烦。</h3>]]></content>
     
     <summary type="html">
     
